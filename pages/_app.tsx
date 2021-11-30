@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/auth.css";
+import "../styles/chats.css";
+import "../styles/index.css";
+import { ContextProvider } from '../context'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const App = ({Component, pageProps}: any) => {
+    return (
+        <ContextProvider>
+        <Component {...pageProps} />
+        </ContextProvider>
+    );
 }
 
-export default MyApp
+export default App;
